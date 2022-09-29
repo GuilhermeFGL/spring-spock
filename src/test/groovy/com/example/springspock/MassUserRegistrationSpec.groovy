@@ -57,7 +57,6 @@ class MassUserRegistrationSpec extends Specification {
                         event.getCustomerName() == sampleCustomer.getFirstName() + " " + sampleCustomer.getLastName()
             })
         }
-
-
     }
+
 }

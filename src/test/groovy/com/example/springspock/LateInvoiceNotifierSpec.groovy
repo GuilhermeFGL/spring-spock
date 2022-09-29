@@ -13,6 +13,8 @@ class LateInvoiceNotifierSpec extends Specification {
     //Dependencies (will be mocked)
     private EmailSender emailSender
     private InvoiceStorage invoiceStorage
+    private EventRecorder eventRecorder
+    private CustomerReader customerReader
 
     //Test data
     private Customer sampleCustomer
@@ -24,8 +26,10 @@ class LateInvoiceNotifierSpec extends Specification {
     void setup() {
         invoiceStorage = Stub(InvoiceStorage.class)
         emailSender = Mock(EmailSender.class)
+        eventRecorder = Mock(EventRecorder.class)
+        customerReader = Mock(CustomerReader.class)
 
-        lateInvoiceNotifier = new LateInvoiceNotifier(emailSender, invoiceStorage)
+        lateInvoiceNotifier = new LateInvoiceNotifier(emailSender, invoiceStorage, eventRecorder, customerReader)
 
         sampleCustomer = new Customer()
         sampleCustomer.setFirstName("Susan")
