@@ -31,7 +31,7 @@ class CustomerDaoSpec extends Specification {
         entityManager.persist(_ as Customer) >> { Customer customer -> customer.setId(123L) }
 
         when: "that customer is saved in the DB"
-        customerDao.saveCustomer("Suzan", "Ivanova")
+        customerDao.saveCustomer("Suzan", "Smith")
 
         then: "the ID is correctly logged"
         1 * logger.info("Saved customer with id {}", 123L)
