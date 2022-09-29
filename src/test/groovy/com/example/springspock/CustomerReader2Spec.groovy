@@ -1,6 +1,6 @@
 package com.example.springspock
 
-import com.example.springspock.entity.Customer
+import com.example.springspock.model.Customer
 import spock.lang.Specification
 
 import javax.persistence.EntityManager

@@ -1,6 +1,6 @@
 package com.example.springspock.service;
 
-import com.example.springspock.entity.Customer;
+import com.example.springspock.model.Customer;
 
 public class InvoiceStorage {
 
