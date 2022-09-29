@@ -11,6 +11,15 @@ import javax.persistence.Id;
 @Entity
 public class Customer {
 
+  public Customer() {
+
+  }
+
+  public Customer(String firstName, String lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
