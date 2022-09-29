@@ -35,6 +35,6 @@ class CustomerDaoSpec extends Specification {
 
         then: "the ID is correctly logged"
         1 * logger.info("Saved customer with id {}", 123L)
-
     }
+
 }

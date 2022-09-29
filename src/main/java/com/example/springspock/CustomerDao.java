@@ -24,10 +24,16 @@ public class CustomerDao {
             logger.error("Missing customer information");
             throw new IllegalArgumentException();
         }
+
         Customer customer = new Customer(firstName, lastName);
-        entityManager.persist(customer);
-        entityManager.flush();
-        logger.info("Saved customer with id {}", customer.getId());
+        try {
+            entityManager.persist(customer);
+            entityManager.flush();
+            logger.info("Saved customer with id {}", customer.getId());
+
+        } catch (Exception e) {
+            logger.error("Error when saving customer: {}", e.getMessage());
+        }
     }
 
 }
