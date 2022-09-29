@@ -1,4 +1,4 @@
-package com.example.springspock;
+package com.example.springspock.entity;
 
 import lombok.Data;
 

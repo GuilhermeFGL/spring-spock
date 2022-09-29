@@ -1,5 +1,7 @@
 package com.example.springspock;
 
+import com.example.springspock.entity.Customer;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
