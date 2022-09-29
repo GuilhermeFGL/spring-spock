@@ -14,6 +14,9 @@ public class CustomerReader {
 
     public String findFullName(Long customerID) {
         Customer customer = entityManager.find(Customer.class, customerID);
+        if (customer == null) {
+            return "";
+        }
         return customer.getFirstName() + " " + customer.getLastName();
     }
 

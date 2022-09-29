@@ -1,8 +1,8 @@
 package com.example.springspock
 
-import spock.lang.Specification;
+import spock.lang.Specification
 
-import javax.persistence.EntityManager;
+import javax.persistence.EntityManager
 
 class CustomerReaderSpec extends Specification {
 
@@ -11,7 +11,7 @@ class CustomerReaderSpec extends Specification {
         given: "a customer with example name values"
         Customer sampleCustomer = new Customer()
         sampleCustomer.setFirstName("Susan")
-        sampleCustomer.setLastName("Ivanova")
+        sampleCustomer.setLastName("Smith")
 
         and: "an entity manager that always returns this customer"
         EntityManager entityManager = Stub(EntityManager.class)
@@ -21,11 +21,11 @@ class CustomerReaderSpec extends Specification {
         CustomerReader customerReader = new CustomerReader()
         customerReader.setEntityManager(entityManager)
 
-        when:  "we ask for the full name of the customer"
+        when: "we ask for the full name of the customer"
         String fullName = customerReader.findFullName(1L)
 
         then: "we get both the first and the last name"
-        fullName == "Susan Ivanova"
+        fullName == "Susan Smith"
     }
 
 }
