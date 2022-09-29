@@ -33,7 +33,7 @@ class LateInvoiceNotifierSpec extends Specification {
 
         sampleCustomer = new Customer()
         sampleCustomer.setFirstName("Susan")
-        sampleCustomer.setLastName("Ivanova")
+        sampleCustomer.setLastName("Smith")
     }
 
     void "a late invoice should trigger an email"() {
